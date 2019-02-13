@@ -26,7 +26,7 @@ routes(router)
 
 /** set up middlewares */
 app.use(cors())
-app.use(helmet())
+//app.use(helmet())
 
 app.use(bodyParser.urlencoded({
   extended: true

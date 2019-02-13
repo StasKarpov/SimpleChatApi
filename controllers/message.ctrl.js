@@ -23,9 +23,9 @@ module.exports = {
 
   getMessages: (req, res) => {
     let per_page = config.messages.messages_per_page
-    let page = req.params.page || 1
+    let page = req.params.page || 0
     Message.find({})
-           .skip(per_page*(page-1))
+           .skip(per_page*page)
            .limit(per_page)
            .exec((err, messages) => {
              if(err)
